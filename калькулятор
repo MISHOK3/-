@@ -11,8 +11,23 @@ async def on_ready():
     print(f'We have logged in as {bot.user}')
 
 @bot.command()
-async def hello(ctx):
-    await ctx.send(f'Привет! Я бот {bot.user}!')
+async def start(ctx):
+    await ctx.send(f'Привет! Я бот калькулятор!')
+    await ctx.send(f'Выберай команду:')
+    await ctx.send(f'plus')
+    await ctx.send(f'sub')
+    await ctx.send(f'mult')
+    await ctx.send(f'div')
+    await ctx.send(f'deg')
+    await ctx.send(f'flr')
+    await ctx.send(f'flq')
+    await ctx.send(f'flq')
+    await ctx.send(f'umr')
+    await ctx.send(f'umq')
+    await ctx.send(f'umra')
+    await ctx.send(f'umqa')
+
+
 
 @bot.command()
 async def plus(ctx, a, b):
