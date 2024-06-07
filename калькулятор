@@ -1,0 +1,78 @@
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='/', intents=discord.Intents.default())
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Привет! Я бот {bot.user}!')
+
+@bot.command()
+async def plus(ctx, a, b):
+    await ctx.send(int(a) + int(b)) 
+
+@bot.command()
+async def sub(ctx, a, b):
+    await ctx.send(int(a) - int(b))
+
+@bot.command()
+async def mult(ctx, a, b):
+    await ctx.send(int(a) * int(b))
+
+@bot.command()
+async def div(ctx, a, b):
+    await ctx.send(int(a) / int(b))
+
+
+
+
+
+@bot.command()
+async def deg(ctx, a, b):
+    await ctx.send(int(a) ** int(b)) 
+
+
+
+
+
+@bot.command()
+async def flr(ctx, a, b):
+    await ctx.send(int(a) * int(b))    
+
+@bot.command()
+async def flq(ctx, a):
+    await ctx.send(int(a) * int(a))    
+
+@bot.command()
+async def fla(ctx, a, b):
+    await ctx.send(int(a) / int(b))
+
+
+
+
+
+@bot.command()
+async def umq(ctx, a):
+    await ctx.send(int(a) * (4))    
+
+@bot.command()
+async def umr(ctx, a, b):
+    await ctx.send((int(a) + int(b)) * (2)) 
+
+@bot.command()
+async def umra(ctx, a, b):
+    await ctx.send((int(a) / (2)) - int(b)) 
+    
+@bot.command()
+async def umqa(ctx, a):
+    await ctx.send(int(a) / (4))       
+
+
+bot.run("ваш токен")
